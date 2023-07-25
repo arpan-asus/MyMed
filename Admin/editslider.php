@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Edit Slider</title>
     <link rel="stylesheet" href="../css/editslider.css" />
+    <link rel="stylesheet" href="../css/body.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
@@ -13,7 +14,7 @@
   <body>
   
     <?php
-    include'navbar.php';
+    include 'navbar.php';
 
     $sliderid="";
     $sliderheading="";
@@ -35,7 +36,7 @@
 }
 ?>
 <br><br>
-<span class="title">Edit Slider</span>
+<span class="title" style="color:white;">Edit Slider</span>
   <form id= "updateslider" action="updatesliderquery.php" method="POST" enctype="multipart/form-data" class="Middle">
   <div class="col-lg-12">
   <div class="d-flex" style="display:flex;justify-content:space-around;margin-block:3rem;">
@@ -46,6 +47,7 @@
    </div>
    <div class="edit"><!--edit wala ho-->
    <input type="file" name="imageFile" id="choosefile"  value="<?php echo $sliderimage ?>">
+   </div>
   <div class="mb-3">
     <input type="hidden" name="sliderid" class="form-control" id="title"  value="<?php echo $sliderid?>">
   </div>
@@ -59,10 +61,10 @@
   </div>
 
  
-   <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+   <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" style="margin-bottom:12px;">
  Update
 </button>
-</div>
+
 </form>
 
 <!-- Button trigger modal -->

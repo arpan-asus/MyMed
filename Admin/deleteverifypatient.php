@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../css/admin.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css">
+    <link rel="stylesheet" href="../css/table.css">
   </head>
   <body>
       
@@ -36,7 +37,7 @@ require '../connection.php';
         </thead>
         <tbody>
         <?php
-            $querys = "SELECT lt.`LoginId`, lt.`Email`, lt.`D.O.B`, lt.`Username`,lt.`AccountCreation`,dd.`PatientMobile`,  dd.`PatientProfilePicture` FROM `logintable` lt JOIN `patientdetails` dd ON lt.`LoginId` = dd.`LoginId` WHERE lt.`userdelete` = 0 AND lt.`isverified` = 1 ";
+            $querys = "SELECT lt.`LoginId`, lt.`Email`, lt.`D.O.B`, lt.`Username`,lt.`AccountCreation`,dd.`PatientMobile`,  dd.`PatientProfilePicture` FROM `logintable` lt JOIN `patientdetails` dd ON lt.`LoginId` = dd.`LoginId` WHERE lt.`userdelete` = 0 AND lt.`isverified` = 1 AND lt.`Role` = 'Patient' ";
             $resulst = mysqli_query($conn, $querys);
             while ($answer = mysqli_fetch_array($resulst)) {
                 $loginId = $answer['LoginId'];
